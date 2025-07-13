@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enter the Garden of Love</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ff4c4c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Georgia', serif;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #ff2e63;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .error {
+      margin-top: 15px;
+      color: pink;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Only the one who holds my heart may enter 💘</h1>
+  <input type="password" id="pass" placeholder="Enter the magic word..." />
+  <button onclick="checkPass()">Enter</button>
+  <p class="error" id="errorMsg"></p>
+  <script>
+    function checkPass() {
+      const password = document.getElementById("pass").value;
+      if (password.toLowerCase() === "omen") {
+        window.location.href = "index.html";
+      } else {
+        const msg = [
+          "Hmm... only my true love knows the answer 💘",
+          "Try again, beautiful soul 🌹",
+          "Nope! That’s not it, love 😘"
+        ];
+        document.getElementById("errorMsg").textContent = msg[Math.floor(Math.random() * msg.length)];
+      }
+    }
+  </script>
+</body>
+</html>
